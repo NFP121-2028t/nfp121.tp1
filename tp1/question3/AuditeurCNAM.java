@@ -45,7 +45,12 @@ public class AuditeurCNAM {
      *         homonymes...
      */
     public String login() {
-        return "";// à compléter
+        String s1 = (nom.length() > 6) ? nom.substring(0, 6) : nom;
+        String s2 = prenom.substring(0, 1);
+        
+        String res = (s1 + "_" + s2).toLowerCase();
+        
+        return res.replaceAll("[^a-zA-Z0-9]+","_");
     }
 
     /**
@@ -54,7 +59,7 @@ public class AuditeurCNAM {
      * @return son nom
      */
     public String nom() {
-        return null;// à compléter
+        return nom;
     }
 
     /**
@@ -63,7 +68,7 @@ public class AuditeurCNAM {
      * @return son prénom
      */
     public String prenom() {
-        return null;// à compléter
+        return prenom;
     }
 
     /**
@@ -72,11 +77,11 @@ public class AuditeurCNAM {
      * @return son matricule
      */
     public String matricule() {
-        return null;// à compléter
+        return matricule;
     }
 
     /**
-     * méthode toString ( méthode redéfinie de la classe Object).
+     * méthode toString (méthode redéfinie de la classe Object).
      * 
      * @return la concaténation du nom, du prénom et du login, selon cette
      *         syntaxe

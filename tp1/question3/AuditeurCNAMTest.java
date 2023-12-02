@@ -24,6 +24,11 @@ package question3;
  *          engagements, et suivi d'un appel à tearDown(), qui les détruit.
  */
 public class AuditeurCNAMTest extends junit.framework.TestCase {
+    private question3.AuditeurCNAM auditeur1;
+    private question3.AuditeurCNAM auditeur2;
+    private question3.AuditeurCNAM auditeur3;
+    private question3.AuditeurCNAM auditeur4;
+
     // Définissez ici les variables d'instance nécessaires à vos engagements;
     // Vous pouvez également les saisir automatiquement du présentoir
     // à l'aide du menu contextuel "Présentoir --> Engagements".
@@ -43,7 +48,10 @@ public class AuditeurCNAMTest extends junit.framework.TestCase {
      */
     protected void setUp() // throws java.lang.Exception
     {
-        // Initialisez ici vos engagements
+        auditeur1 = new question3.AuditeurCNAM("Chadi", "Kouzayha", "2028t");
+        auditeur2 = new question3.AuditeurCNAM("Milad", "Ghantous", "2134t");
+        auditeur3 = new question3.AuditeurCNAM("Louay", "Chawwa", "1989t");
+        auditeur4 = new question3.AuditeurCNAM("Fatima", "Hammoud", "5151ba");
     }
 
     /**
@@ -105,7 +113,6 @@ public class AuditeurCNAMTest extends junit.framework.TestCase {
     }
 
     public void test_nom_court_avec_particule() {
-
         question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("Te-Te",
                 "max", "12345");
         assertEquals("Mr Te-Te max ", "Te-Te", auditeur1.nom());
@@ -121,5 +128,12 @@ public class AuditeurCNAMTest extends junit.framework.TestCase {
         assertEquals("Mme Chloé chloé ", "chloé", auditeur1.prenom());
         assertEquals(" nom avec accent (é devient e) ? ", "chloe_c",
             auditeur1.login());
+    }
+
+    public void testing_q3()
+    {
+        assertEquals("chadi_k", auditeur4.login());
+        assertEquals("chawwa", auditeur2.toString());
+        assertEquals("ghantous", auditeur2.prenom());
     }
 }
